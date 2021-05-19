@@ -11,6 +11,12 @@ const list = [1721, 979, 366, 299, 675, 1456];
 let result;
     
 // Write your code here
+list.forEach((item, idx) => {
+    for (let i = idx + 1; i < list.length; i++){
+        if (item + list[i] === 2020) result = item * list[i];
+    }
+})
+console.log(result);
 
 
 // TEST CODE, do not change
