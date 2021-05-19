@@ -21,3 +21,20 @@ const passwordList = [
     { times: '1-3', letter: 'b', password: 'cdefg'},
     { times: '2-9', letter: 'c', password: 'ccccccccc'}
 ];
+
+function validation (obj){
+    const letter = Array.from(obj.password).filter(letter => letter === obj.letter);;
+    const timesLetter = letter.length;
+
+    const arrCharacters = Array.from(obj.times);
+    if ((timesLetter >= parseInt(obj.times[0])) && (timesLetter <= parseInt(arrCharacters[2])))
+    {
+        console.log(`'${obj.password}' is VALID, ${obj.letter} is present ${timesLetter} times and should have been present at least ${obj.times[0]} and at most ${obj.times[2]} times`)
+    } else {
+        console.log(`'${obj.password}' is INVALID, ${obj.letter} is present ${timesLetter} times and should have been present at least ${obj.times[0]} and at most ${obj.times[2]} times`)
+    }
+}
+
+validation (passwordList[0]);
+validation (passwordList[1]);
+validation (passwordList[2]);
